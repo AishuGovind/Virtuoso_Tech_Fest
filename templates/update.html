@@ -1,0 +1,32 @@
+{% extends 'index.html' %}
+{% block content %}
+{% load crispy_forms_tags %}
+<div class="container-fluid">
+    <div class="col-md-offset-4 col-md-4">
+        <h2 class="text-center page-header text-primary"><i class="fa fa-edit">  Update the Registration Form</i></h2>
+        <form action="/update/{{data.id}}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" class="form-control" value="{{data.Name}}" name="name" >
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="text" class="form-control" value="{{data.Age}}" name="age" >
+            </div>
+            <div class="form-group">
+                <label>Event Name</label>
+                <input type="text" class="form-control" value="{{data.Event_Name}}" name="event" >
+            </div>
+            <div class="form-group">
+                <label>Contact Number</label>
+                <input type="text" class="form-control" value="{{data.Contact_Number}}" name="contact" >
+            </div>
+            <div class="form-group">
+                <label>Email ID</label>
+                <input type="text" class="form-control" value="{{data.Email_ID}}" name="email" >
+            </div>
+        <input type="submit" value="Update" class ="btn btn-success btn-block">
+        </form>    </div>
+</div>
+{% endblock%}
